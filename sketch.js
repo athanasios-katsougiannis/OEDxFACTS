@@ -1,7 +1,6 @@
 //Design: PADU studio + Athanasios Katsougiannis
 //Code: Athanasios Katsougiannis
 
-
 var mic;
 var amplitude;
 
@@ -26,14 +25,15 @@ function setup() {
 
 function draw() {
   background(250, 20);
-  
-  var level = amplitude.getLevel();
 
   var horSize = 1.4*width/3;
   var verSize = height-(height/3);
   var g = width/3.5;
   var ballsH = height/30;
 
+  var level = amplitude.getLevel();
+
+  // rectangle variables
   var spacing = horSize/prevLevels.length;
   var w = spacing/1.2;
   var spacing1 = verSize/prevLevels1.length;
@@ -57,11 +57,12 @@ function draw() {
 
     var x = map(i, prevLevels.length, 0, horSize, 0);
     var h = map(prevLevels[i], 0, 0.3, ballsH, 190);
-    
+
     fill(0, 255, 255);
     
     rect(x+g, 150, w, h, 100);
     rect(x+g, height-180, w, h, 100);
+
   }
   
   for (var i = 0; i < prevLevels1.length; i++) {

@@ -1,0 +1,69 @@
+@font-face {
+  font-family: "HelveticaNeue-Medium";
+  src: url("HelveticaNeue-Medium.ttf") format("ttf");
+}
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url("HelveticaNeue.ttf") format("ttf");
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  width: 100%;
+  height:100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(1px);
+  z-index:3;
+
+}
+
+h1 {
+  position: absolute;
+  font-family: "HelveticaNeue-Medium", serif; 
+  font-weight:400;
+  font-size: 6.5vw;
+  line-height: 6.5vw;
+  transform:translate(0,-50%);
+  top: 40%;
+  right: 50px;
+  z-index:10;
+}
+
+
+h2 {
+  position: absolute;
+  font-family: "HelveticaNeue", serif; 
+  font-weight:400;
+  font-size: 1.2vw;
+  line-height: 1.2vw;
+  top: 110px;
+  left: 50px;
+  z-index:10;
+
+}
+
+
+.eu {
+  width:350px;
+  position: absolute;
+  bottom: 30px;
+  left: 40px;
+  z-index:10;
+
+}
+
+
+.facts {
+  width:150px;
+  position: absolute;
+  bottom: 105px;
+  left: 24px;
+  z-index:10;
+
+}

@@ -1,16 +1,12 @@
-/*
-  Store an array of amplitude values and draw them over time.
+//Design: PADU studio + Athanasios Katsougiannis
+//Code: Athanasios Katsougiannis
 
-  getLevel() from the p5.Amplitude object and map it to the ellipse position-amplitudeOverTime.
-
-  Press space bar to pause
- */
 
 var mic;
 var amplitude;
 
 
-var prevLevels = new Array(32);
+var prevLevels = new Array(23);
 var prevLevels1 = new Array(16);
 
 function setup() {
@@ -29,20 +25,15 @@ function setup() {
 }
 
 function draw() {
+  background(250, 20);
   
-  var horSize = 2*width/3;
-  //var verSize = height-(height/3*2.09);
+  var level = amplitude.getLevel();
+
+  var horSize = 1.4*width/3;
   var verSize = height-(height/3);
   var g = width/3.5;
   var ballsH = height/30;
 
-  
-  background(250, 20);
-  //drawingContext.filter = 'blur(2px)';
-
-  var level = amplitude.getLevel();
-
-  // rectangle variables
   var spacing = horSize/prevLevels.length;
   var w = spacing/1.2;
   var spacing1 = verSize/prevLevels1.length;
@@ -65,20 +56,12 @@ function draw() {
   for (var i = 0; i < prevLevels.length; i++) {
 
     var x = map(i, prevLevels.length, 0, horSize, 0);
-
-    //var h = map(prevLevels[i], 0, 0.5,  30 minHeight, 800);
     var h = map(prevLevels[i], 0, 0.3, ballsH, 190);
     
-    //var alphaValue = map(i, 0, prevLevels.length, 1, 250);
-    //var hueValue = map(h, minHeight, height, 220, 255);
-
-    //fill(0, 255, 255, alphaValue);
     fill(0, 255, 255);
     
-    //rect(x, height/2, w, h);
     rect(x+g, 150, w, h, 100);
     rect(x+g, height-180, w, h, 100);
-
   }
   
   for (var i = 0; i < prevLevels1.length; i++) {
